@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1097564180596",
+    "project_id": "attendant-management",
+    "storage_bucket": "attendant-management.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1097564180596:android:2193ad6b4a2f5cfc3b8121",
+        "android_client_info": {
+          "package_name": "com.example.attendance_system"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1097564180596-nuc3f95a4aih4ijce8q71kf1svhlrfao.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC8ko60V4WaFVEUWnmfcIQA0_L9Z_BQAkQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1097564180596-nuc3f95a4aih4ijce8q71kf1svhlrfao.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
