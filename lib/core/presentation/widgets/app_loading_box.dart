@@ -7,7 +7,7 @@ class AppLoadingBox extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SpinKitChasingDots(
+    return SpinKitFoldingCube(
       color: secondaryColorS2,
       size: 80,
     );

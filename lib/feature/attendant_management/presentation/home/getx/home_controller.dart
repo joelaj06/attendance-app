@@ -90,7 +90,7 @@ class HomeController extends GetxController {
             position.latitude, position.longitude);
         location(
             '${placeMarks[0].street}, ${placeMarks[0].locality} - ${placeMarks[0].administrativeArea},'
-            '${placeMarks[0].postalCode}  ${placeMarks[0].country}');
+            '${placeMarks[0].postalCode} ${placeMarks[0].subLocality} ${placeMarks[0].subAdministrativeArea} ${placeMarks[0].country}');
         debugPrint('loc: ${location.value}');
       });
     } catch (e) {
@@ -98,7 +98,5 @@ class HomeController extends GetxController {
     }
   }
 
-  void signOut() {
-    _authController.signOut();
-  }
+
 }

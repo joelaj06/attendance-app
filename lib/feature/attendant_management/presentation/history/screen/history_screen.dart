@@ -2,13 +2,15 @@ import 'package:attendance_system/core/presentation/themes/app_theme.dart';
 import 'package:attendance_system/core/presentation/utils/app_date_picker.dart';
 import 'package:attendance_system/core/presentation/utils/date_formatter.dart';
 import 'package:attendance_system/core/presentation/widgets/exceptionIndicators/no_content_found.dart';
+import 'package:attendance_system/core/presentation/widgets/faded_animation.dart';
 import 'package:attendance_system/feature/attendant_management/data/model/user_action.dart';
 import 'package:attendance_system/feature/attendant_management/presentation/history/getx/history_controller.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
-import 'package:month_year_picker/month_year_picker.dart';
+
+import '../../../../../core/presentation/widgets/animation_column.dart';
 
 class HistoryScreen extends GetView<HistoryController> {
   const HistoryScreen({Key? key}) : super(key: key);
@@ -120,17 +122,17 @@ class HistoryScreen extends GetView<HistoryController> {
         builder: (context, snapshot) {
           if (snapshot.hasData) {
             if (snapshot.data!.isEmpty) {
-              debugPrint('No record found');
-              return const Text('No record found!');
+              return const NoContentFound();
             }
             final userActionList = snapshot.data;
             return ListView.builder(
               physics: const BouncingScrollPhysics(),
-              shrinkWrap: false,
+              shrinkWrap: true,
               itemCount: userActionList!.length,
               itemBuilder: (context, int index) {
                 final userAction = userActionList[index];
                 controller.timestamp = userAction.timeStamp!;
+                debugPrint(controller.timestamp.toDate().toString());
                 debugPrint(userAction.timeStamp!.toDate().toString());
                 debugPrint(DateFormatter()
                     .dateFormatterADay(userAction.timeStamp!.toDate()));

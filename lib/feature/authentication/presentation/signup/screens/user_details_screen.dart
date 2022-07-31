@@ -89,7 +89,7 @@ class UserDetailScreen extends GetView<SignUpController> {
         const SizedBox(height: 28),
         AppTextInput(
           onChanged: (value) =>
-              controller.onPhoneNumberInputChange(value!),
+              controller.onUserIdInputChange(value!),
           validator: (value) => controller.validateName(value!),
           hintText: 'Id Number',
          // keyboardType: TextInputType.number,

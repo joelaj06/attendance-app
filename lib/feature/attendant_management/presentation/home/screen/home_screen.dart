@@ -169,20 +169,25 @@ class HomeScreen extends GetView<HomeController> {
               child: Obx(
                 () => controller.checkOut.value == '--/--'
                     ? _buildSlideToCheckInOrOut()
-                    : const Padding(
-                        padding: EdgeInsets.all(8.0),
-                        child: Text(
-                          'You have completed the day!',
-                          style: TextStyle(fontSize: 24),
+                    :  Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Center(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: <Widget> [
+                              Image.asset('assets/images/completed.gif',
+                                scale: 4,
+                              ),
+                              const Text(
+                                'You have completed the day!',
+                                style: TextStyle(fontSize: 24),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
               ),
             ),
-            IconButton(
-                onPressed: () {
-                  controller.signOut();
-                },
-                icon: const Icon(Icons.exit_to_app))
           ],
         ),
       ),

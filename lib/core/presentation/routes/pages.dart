@@ -1,6 +1,8 @@
 import 'package:attendance_system/feature/attendant_management/presentation/base/screens/base_screen.dart';
 import 'package:attendance_system/feature/attendant_management/presentation/history/getx/history_bindings.dart';
 import 'package:attendance_system/feature/attendant_management/presentation/history/screen/history_screen.dart';
+import 'package:attendance_system/feature/attendant_management/presentation/profile/getx/profile_bindings.dart';
+import 'package:attendance_system/feature/attendant_management/presentation/profile/screen/profile_screen.dart';
 import 'package:attendance_system/feature/authentication/presentation/signup/screens/user_details_screen.dart';
 import 'package:get/get.dart';
 import 'package:attendance_system/core/root/root.dart';
@@ -23,7 +25,7 @@ class Pages {
         LoginBindings(),
         HomeBindings(),
         HistoryBindings(),
-   //     ProfileBindings()
+        ProfileBindings()
       ]
     ),
     GetPage(
@@ -61,7 +63,10 @@ class Pages {
       page: () =>  const HistoryScreen(),
       binding: HistoryBindings(),
     ),
-
-
+    GetPage(
+      name: AppRoutes.profile,
+      page: () =>  const ProfileScreen(),
+      binding: ProfileBindings(),
+    ),
   ];
 }
